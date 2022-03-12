@@ -1,6 +1,5 @@
 package com.battleground.vertx;
 
-import io.vertx.core.Vertx
 import io.vertx.ext.web.Route
 import io.vertx.ext.web.Router
 import io.vertx.ext.web.RoutingContext
@@ -13,17 +12,6 @@ import io.vertx.kotlin.coroutines.dispatcher
 import io.vertx.sqlclient.Tuple
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
-
-suspend fun main() {
-    val vertx = Vertx.vertx()
-    try {
-        vertx.deployVerticle(BattlegroundCoroutineVerticle()).await()
-        println("Application started")
-    } catch (exception: Throwable) {
-        println("Could not start application")
-        exception.printStackTrace()
-    }
-}
 
 class BattlegroundCoroutineVerticle : CoroutineVerticle() {
 
