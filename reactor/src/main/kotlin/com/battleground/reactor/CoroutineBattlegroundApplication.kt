@@ -13,7 +13,6 @@ open class CoroutineBattlegroundApplication {
     open fun route(userService: UserCoroutineService) = coRouter {
         GET("/kt/info/{username}") { userService.info(it) }
         POST("/kt/register") { userService.register(it) }
-
     }
 
 }
